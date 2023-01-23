@@ -13,14 +13,15 @@ public class Window extends JFrame {
     private JButton savefilebutton = new JButton("Save");
     private JButton newtreecomponentbutton = new JButton("+");
     
-    // Outline Components
-    private JPanel outlinepanel = new JPanel();
+    // Panels
+    private OutlinePage outlinepanel = new OutlinePage();
+    private EditorPane editorpane = new EditorPane();
     
     public Window() {
         // Setup UI
         this.setTitle("Outliner");
         this.setPreferredSize(new Dimension(800, 600));
-        this.setLayout(gridlayout);
+        this.setLayout(this.gridlayout);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Setup Grid Layout
@@ -36,13 +37,9 @@ public class Window extends JFrame {
         this.toolbarpanel.add(this.savefilebutton);
         this.toolbarpanel.add(this.newtreecomponentbutton);
 
-        // Outline Stuffs
-        this.outlinepanel.setBorder(BorderFactory.createTitledBorder("Outline"));
-        this.outlinepanel.setLayout(new BorderLayout());
-        this.outlinepanel.add(new OutlinePage());
-
-        this.AddToGrid(toolbarpanel, 0, 0, 1, 1);
-        this.AddToGrid(outlinepanel, 0, 1, 1, 1);
+        this.AddToGrid(this.toolbarpanel, 0, 0, 2, 1);
+        this.AddToGrid(this.outlinepanel, 0, 1, 1, 1);
+        this.AddToGrid(this.editorpane, 1, 1, 1, 1);
 
         // Render
         this.pack();
