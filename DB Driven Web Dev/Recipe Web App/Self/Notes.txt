@@ -1,0 +1,8 @@
+Filters:
+    Name
+    Rating
+    Ingredients
+    Cooking Time
+    Allergens
+    Is Vegan?
+    Is Halal?

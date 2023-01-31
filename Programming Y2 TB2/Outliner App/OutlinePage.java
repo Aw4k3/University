@@ -4,7 +4,7 @@ import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.*;
 
-public class OutlinePage extends JPanel implements TreeSelectionListener{
+public class OutlinePage extends JPanel implements TreeSelectionListener {
     private int fontsize = 18;
     private DefaultMutableTreeNode rootnode = new DefaultMutableTreeNode("Top Level");
     private JTree tree = new JTree(this.rootnode);
@@ -22,7 +22,7 @@ public class OutlinePage extends JPanel implements TreeSelectionListener{
         rootnode.add(new DefaultMutableTreeNode("b"));
         rootnode.add(new DefaultMutableTreeNode("c"));
         this.tree.setFont(new Font("Regular", Font.PLAIN, fontsize));
-        this.tree.addTreeSelectionListener(OnNodeSelect);
+        // this.tree.addTreeSelectionListener(valueChanged);
         this.add(this.outlinescrollpanel);
 
         // Setup Reordering Buttons
@@ -38,7 +38,9 @@ public class OutlinePage extends JPanel implements TreeSelectionListener{
         this.setLayout(new BoxLayout(this, 1));
     }
 
-    public void OnNodeSelect(TreeSelectionEvent e) {
-        
+    @Override
+    public void valueChanged(TreeSelectionEvent e) {
+        TreePath path = e.getNewLeadSelectionPath();
+        if (path != null) EditorPane.BindNode(Main.w.GetEditorPane(), (DefaultMutableTreeNode)path.getLastPathComponent());
     }
 }

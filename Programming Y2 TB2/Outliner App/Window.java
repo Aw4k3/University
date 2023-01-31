@@ -46,6 +46,10 @@ public class Window extends JFrame {
         this.setVisible(true);
     }
 
+    public EditorPane GetEditorPane() { 
+        return this.editorpane;
+    }
+
     private void AddToGrid(Component component, int cellx, int celly, int spanx, int spany) {
         this.gridconstraints.gridx = cellx;
         this.gridconstraints.gridy = celly;

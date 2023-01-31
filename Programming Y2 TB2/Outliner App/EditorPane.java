@@ -1,9 +1,7 @@
-import java.awt.*;
 import javax.swing.*;
 import javax.swing.tree.*;
 
 public class EditorPane extends JPanel {
-    private DefaultMutableTreeNode nodebinding;
     private JTextArea nodetext = new JTextArea();
 
     public EditorPane() {
@@ -16,7 +14,7 @@ public class EditorPane extends JPanel {
         this.setLayout(new BoxLayout(this, 1));
     }
 
-    public void BindNode(DefaultMutableTreeNode n) {
-        nodetext.setText(n.getUserObject().toString());
+    static public void BindNode(EditorPane editor, DefaultMutableTreeNode n) {
+        editor.nodetext.setText(n.getUserObject().toString());
     }
 }
