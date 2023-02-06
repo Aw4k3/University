@@ -1,12 +1,15 @@
 <?php
 class Recipe {
-    private $name = "";
-    private $price = 0.0;
-    private $rating = 1;
-    private $description = "";
-    private $ingredients = [""];
-    private $instructions = [""];
-    private $warnings = [""]; // Dietary Restrictions and Allergens
+    private $RecipeID = -1;
+    private $Name = "";
+    private $CookingTime = -1;
+    private $Price = 0.0;
+    private $DateAdded = "";
+    private $Rating = 1;
+    private $instructions = "";
+    // private $description = "";
+    // private $ingredients = [""];
+    // private $warnings = [""]; // Dietary Restrictions and Allergens
 
     function __get($name) {
         return $this->$name;
@@ -49,6 +52,10 @@ class Recipe {
         if (is_array($warnings))
             foreach ($warnings as $warning)
                 array_push($this->$warnings, $warning);
+    }
+
+    function GetInstructions() {
+        return nl2br($this->instructions);
     }
 }
 ?>

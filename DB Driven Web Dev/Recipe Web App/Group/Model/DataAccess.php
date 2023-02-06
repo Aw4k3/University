@@ -1,15 +1,12 @@
 <?php
-
-$pdo = new PDO ("mysql:host=localhost;
-dbname=db_maroon","maroon","tiedeita",
-[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+$pdo = new PDO ("mysql:host=localhost; dbname=db_maroon","maroon","tiedeita", [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 function getAllRecipes()
 {
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM Recipes");
     $statement->execute();
-    $results = $statement->fetchAll(PDO::FETCH_CLASS,"Recipes");
+    $results = $statement->fetchAll(PDO::FETCH_CLASS, "Recipe");
     return $results;
 }
 
@@ -23,7 +20,7 @@ the html for the this could look something like this
     <input type="number" name="reciperating">
 </form>
 */
-
+ /*
 function filterByName() {
     global $pdo;
     $statement = $pdo->prepare("SELECT * FROM Recipes WHERE Name LIKE \"%$_GET["recipename"]%\"");
@@ -63,5 +60,5 @@ function filterByRating() {
     $results = $statement->fetchAll(PDO::FETCH_CLASS,"Recipes");
     return $results;
 }
-
+*/
 ?>
