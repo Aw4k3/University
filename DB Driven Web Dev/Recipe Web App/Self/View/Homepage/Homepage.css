@@ -1,0 +1,64 @@
+/* https://coolors.co/f16f55-ede6e3-dadad9-36382e-5bc3eb */
+
+:root {
+    --corner-radius: 6px;
+    --primary-colour: #f16f55;
+    --secondary-colour: #5bc3eb;
+}
+
+body {
+    margin: 0px;
+    background-color: #ede6e3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ede6e3;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.342));
+    font-size: 22px;
+}
+
+main {
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 300px auto;
+    gap: 10px;
+}
+
+h1, h2, p {
+    margin: 0px;
+}
+
+.filter-panel {
+    background-color: var(--primary-colour);
+    color: white;
+    border-radius: var(--corner-radius);
+    padding: 10px 16px;
+}
+
+.card-viewer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+}
+
+.dish-card {
+    padding: 10px;
+    background-color: var(--primary-colour);
+    color: white;
+    border-radius: var(--corner-radius);
+    font-size: 70%;
+}
+
+.dish-card > img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--corner-radius);
+}
