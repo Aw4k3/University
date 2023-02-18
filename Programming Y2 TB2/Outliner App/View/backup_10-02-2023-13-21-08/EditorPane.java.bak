@@ -1,3 +1,5 @@
+package uk.ac.kingston.ci5105.outliner.View;
+
 import javax.swing.*;
 import javax.swing.tree.*;
 

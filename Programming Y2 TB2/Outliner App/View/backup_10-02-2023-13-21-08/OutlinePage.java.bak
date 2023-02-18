@@ -1,8 +1,12 @@
+package uk.ac.kingston.ci5105.outliner.View;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.*;
+
+import uk.ac.kingston.ci5105.outliner.Controller.Main;
 
 public class OutlinePage extends JPanel implements TreeSelectionListener {
     private int fontsize = 18;
@@ -41,6 +45,6 @@ public class OutlinePage extends JPanel implements TreeSelectionListener {
     @Override
     public void valueChanged(TreeSelectionEvent e) {
         TreePath path = e.getNewLeadSelectionPath();
-        if (path != null) EditorPane.BindNode(Main.w.GetEditorPane(), (DefaultMutableTreeNode)path.getLastPathComponent());
+        // if (path != null) EditorPane.BindNode(Main.w.GetEditorPane(), (DefaultMutableTreeNode)path.getLastPathComponent());
     }
 }
