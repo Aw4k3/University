@@ -17,7 +17,8 @@
             <form style="display: grid; gap: 10px;" action="../Controller/AdminPage.php" method="post">
                 <!-- Search Bar -->
                 <div class="filter-row" style="flex-direction: row; display: flex;">
-                    <input type="text" name="recipe-name" placeholder="Search for a recipe">
+                    <input type="text" name="recipe-name" placeholder="Search">
+                    <button type="submit" id="search-button">Search</button>
                     <span id="filter-button" class="material-symbols-outlined">filter_list</span>
                 </div>
 
@@ -48,7 +49,7 @@
                             <input type="checkbox" name="is-halal">
                         </div>
                     </div>
-                    <button type="submit">Apply</button>
+                    <button type="submit">Search</button>
                 </div>
             </form>
             <form action="../Controller/AddRecipe.php" method="post" class="filter-row">

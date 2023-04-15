@@ -169,6 +169,13 @@ footer {
     gap: 16px;
 }
 
+.dropdown {
+    height: 40px;
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+}
+
 .dropdown-container {
     width: 180px;
     position: absolute;
@@ -176,6 +183,7 @@ footer {
     right: 0;
     z-index: 1;
     display: none;
+    gap: 8px;
     padding: 10px;
     background-color: white;
     border: 1px solid;
